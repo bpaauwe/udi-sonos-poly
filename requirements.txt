@@ -1,2 +1,2 @@
-soco>=0.17
+soco>=0.25
 polyinterface>=2.1.0
