@@ -86,13 +86,17 @@ class Speaker(polyinterface.Node):
         self.reportDrivers()
 
     def _get_state(self):
-        text = self.zone.get_current_transport_info()['current_transport_state'].upper()
-        return {
-            'PLAYING': '0',
-            'TRANSITIONING': '1',
-            'PAUSED_PLAYBACK': '2',
-            'STOPPED': '3'
-        }.get(text, '3')
+        try: 
+            text = self.zone.get_current_transport_info()['current_transport_state'].upper()
+            return {
+                'PLAYING': '0',
+                'TRANSITIONING': '1',
+                'PAUSED_PLAYBACK': '2',
+                'STOPPED': '3'
+            }.get(text, '3')
+        except Exception as e:
+            LOGGER.error(f'Connection error: {e}')
+            self.zone = soco.SoCo(self.ip)
 
     def _play(self, command):
         try:
