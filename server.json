@@ -12,8 +12,8 @@
         {
             "title": "udi-sonos-poly: A Polyglot v2 interface for Sonos",
             "author": "James Milne (Einstein.42)",
-            "version": "2.0.8",
-            "date": "January 5th, 2022",
+            "version": "2.0.9",
+            "date": "July 6th, 2022",
             "source": "https://github.com/bpaauwe/udi-sonos-poly",
             "license": "https://raw.githubusercontent.com/bpaauwe/udi-sonos-poly/master/LICENSE"
         }
